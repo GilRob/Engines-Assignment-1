@@ -1,0 +1,30 @@
+﻿  FileManager.cpp
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\SimpleClass.h(22,19): error C3646:  'filer': unknown override specifier
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\SimpleClass.h(22,19): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(17,21): warning C4251:  'FileManager::write': class 'std::basic_ofstream<char,std::char_traits<char>>' needs to have dll-interface to be used by clients of class 'FileManager'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\iosfwd(224): message :  see declaration of 'std::basic_ofstream<char,std::char_traits<char>>'
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(18,20): warning C4251:  'FileManager::read': class 'std::basic_ifstream<char,std::char_traits<char>>' needs to have dll-interface to be used by clients of class 'FileManager'
+  main.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\iosfwd(223): message :  see declaration of 'std::basic_ifstream<char,std::char_traits<char>>'
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\SimpleClass.h(22,19): error C3646:  'filer': unknown override specifier
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\SimpleClass.h(22,19): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(17,21): warning C4251:  'FileManager::write': class 'std::basic_ofstream<char,std::char_traits<char>>' needs to have dll-interface to be used by clients of class 'FileManager'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\iosfwd(224): message :  see declaration of 'std::basic_ofstream<char,std::char_traits<char>>'
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(18,20): warning C4251:  'FileManager::read': class 'std::basic_ifstream<char,std::char_traits<char>>' needs to have dll-interface to be used by clients of class 'FileManager'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\iosfwd(223): message :  see declaration of 'std::basic_ifstream<char,std::char_traits<char>>'
+  SimpleClass.cpp
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\main.cpp(4,1): warning C4326:  return type of 'main' should be 'int' instead of 'void'
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(17,21): warning C4251:  'FileManager::write': class 'std::basic_ofstream<char,std::char_traits<char>>' needs to have dll-interface to be used by clients of class 'FileManager'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\iosfwd(224): message :  see declaration of 'std::basic_ofstream<char,std::char_traits<char>>'
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(18,20): warning C4251:  'FileManager::read': class 'std::basic_ifstream<char,std::char_traits<char>>' needs to have dll-interface to be used by clients of class 'FileManager'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\iosfwd(223): message :  see declaration of 'std::basic_ifstream<char,std::char_traits<char>>'
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(20,20): error C3646:  'sClass': unknown override specifier
+  Wrapper.cpp
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(20,20): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(17,21): warning C4251:  'FileManager::write': class 'std::basic_ofstream<char,std::char_traits<char>>' needs to have dll-interface to be used by clients of class 'FileManager'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\iosfwd(224): message :  see declaration of 'std::basic_ofstream<char,std::char_traits<char>>'
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(18,20): warning C4251:  'FileManager::read': class 'std::basic_ifstream<char,std::char_traits<char>>' needs to have dll-interface to be used by clients of class 'FileManager'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\iosfwd(223): message :  see declaration of 'std::basic_ifstream<char,std::char_traits<char>>'
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(20,20): error C3646:  'sClass': unknown override specifier
+  Generating Code...
+C:\Users\gilro\OneDrive\Documents\Third Year\First Semester\Engines\Tutorials\IndvAss1\Indv-Assignment-1\Tutorial2\Tutorial2\FileManager.h(20,20): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
