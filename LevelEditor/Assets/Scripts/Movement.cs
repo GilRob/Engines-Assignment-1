@@ -4,27 +4,41 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public float speedH = 2.0f;
+    public float speedV = 2.0f;
+
+    private float yaw = 0.0f;
+    private float pitch = 0.0f;
+
+    public void Start()
+    {
+        
+    }
+    
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Translate(0, 0, 1);
+            transform.Translate(Vector3.forward * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Translate(Vector3.back * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector3.left * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector3.right * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            transform.Translate(0, 0, -1);
-        }
+        yaw += speedH * Input.GetAxis("Mouse X");
+        pitch -= speedV * Input.GetAxis("Mouse Y");
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            transform.Translate(-1, 0, 0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            transform.Translate(1, 0, 0);
-        }
+        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
     }
 }
