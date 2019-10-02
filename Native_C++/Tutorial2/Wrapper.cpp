@@ -2,9 +2,9 @@
 
 FileManager fileMan;
 
-void SavePosition(float posX, float posY, float posZ)
+void SavePosition(Vec3 uVec)
 {
-	return fileMan.SavePosition(posX, posY, posZ);
+	return fileMan.SavePosition(uVec);
 }
 
 void LoadPosition()
@@ -12,17 +12,12 @@ void LoadPosition()
 	return fileMan.LoadPosition();
 }
 
-float getX()
+Vec3 getVec()
 {
-	return fileMan.getX();
+	return fileMan.getVec();
 }
 
-float getY()
+void setVec(Vec3 uVec)
 {
-	return fileMan.getY();
-}
-
-float getZ()
-{
-	return fileMan.getZ();
+	return fileMan.setVec(uVec);
 }

@@ -5,6 +5,14 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <sstream>
+
+struct Vec3
+{
+	float x;
+	float y;
+	float z;
+};
 
 class PLUGIN_API FileManager
 {
@@ -16,25 +24,19 @@ public:
 	void ReadFile(std::string fileName);
 
 	//Saves the values to variables and calls the writer
-	void SavePosition(float posX, float posY, float posZ);
+	void SavePosition(Vec3 uVec);
 
 	//Calls the reader
 	void LoadPosition();
 
 	//Setters
-	void setX(float posX);
-	void setY(float posY);
-	void setZ(float posZ);
+	void setVec(Vec3 posVec);
 
 	//Getters
-	float getX();
-	float getY();
-	float getZ();
+	Vec3 getVec();
 
 	//Variables to hold the position
-	float X;
-	float Y;
-	float Z;
+	Vec3 holdVec;
 
 private:
 	

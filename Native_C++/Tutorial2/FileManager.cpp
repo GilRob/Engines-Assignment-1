@@ -3,16 +3,17 @@
 //This function will write the saved values to a text file
 void FileManager::WriteFile(std::string fileName)
 {
+	Vec3 temp;
+	temp = getVec();
 	//Open the file
-	write.open(fileName);
+	write.open(fileName, std::ofstream::app);
 	//If the file is open
 	if (write.is_open())
 	{
 		//Write each value to the file
-		write << getX() << "\n";
-		write << getY() << "\n";
-		write << getZ() << "\n";
-
+		write <<temp.x << ",";
+		write <<temp.y << ",";
+		write << temp.z;
 		//Close the file
 		write.close();
 	}
@@ -25,8 +26,10 @@ void FileManager::ReadFile(std::string fileName)
 	std::string line;
 	//Open the file
 	read.open(fileName);
+	//std::string line;
+	std::vector<std::vector<Vec3>> vectorVec;
+	int i = 0;
 	
-	int counter = 0;
 
 	//If the file is open
 	if (read.is_open())
@@ -34,25 +37,36 @@ void FileManager::ReadFile(std::string fileName)
 		//Go through each line in the file
 		while (std::getline(read, line))
 		{
+			//Vec3 value;
+			//std::stringstream ss(line);
+			//vectorVec.push_back(std::vector<Vec3>());
+			//
+			//while (ss >> value)
+			//{
+			//	vectorVec[i].push_back(value);
+			//}
+			//++i;
+
 			//Go through each line in the file and covert the string of the number into a float
-			if (counter == 0)
-			{
-				posVal = std::stof(line);
-				setX(posVal);
-			}
-			else if (counter == 1)
-			{
-				posVal = std::stof(line);
-				setY(posVal);
-			}
-			else if (counter == 2)
-			{
-				posVal = std::stof(line);
-				setZ(posVal);
-			}
+			//if (counter == 0)
+			//{
+			//	posVal = std::stof(line);
+			//	setX(posVal);
+			//}
+			//else if (counter == 1)
+			//{
+			//	posVal = std::stof(line);
+			//	setY(posVal);
+			//}
+			//else if (counter == 2)
+			//{
+			//	posVal = std::stof(line);
+			//	setZ(posVal);
+			//}
+
 			
 			//Increment the counter to assign the values to the next variable
-			counter++;
+			//counter++;
 		}
 		//Close the file
 		read.close();
@@ -60,12 +74,10 @@ void FileManager::ReadFile(std::string fileName)
 }
 
 //Saves the values to variables and calls the writer
-void FileManager::SavePosition(float posX, float posY, float posZ)
+void FileManager::SavePosition(Vec3 uVec)
 {
 	//Store the values passed into the variables
-	setX(posX);
-	setY(posY);
-	setZ(posZ);
+	setVec(uVec);
 
 	//Call the file writer
 	WriteFile("save.txt");//, this);
@@ -77,32 +89,12 @@ void FileManager::LoadPosition()
 	ReadFile("save.txt");
 }
 
-void FileManager::setX(float posX)
+void FileManager::setVec(Vec3 uVec)
 {
-	X = posX;
+	holdVec = uVec;
 }
 
-void FileManager::setY(float posY)
+Vec3 FileManager::getVec()
 {
-	Y = posY;
-}
-
-void FileManager::setZ(float posZ)
-{
-	Z = posZ;
-}
-
-float FileManager::getX()
-{
-	return X;
-}
-
-float FileManager::getY()
-{
-	return Y;
-}
-
-float FileManager::getZ()
-{
-	return Z;
+	return holdVec;
 }
