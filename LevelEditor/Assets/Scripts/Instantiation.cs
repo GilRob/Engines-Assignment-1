@@ -6,7 +6,11 @@ public class Instantiation : MonoBehaviour
 {
     Ray ray;
     RaycastHit hit;
+    //public List<GameObject> prefabs = new List<GameObject>();
     public GameObject prefab;
+    public GameObject[] myPrefabs;
+
+    private GameObject heldObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +24,24 @@ public class Instantiation : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKeyUp(KeyCode.Mouse0))
             {
-                GameObject obj = Instantiate(prefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity) as GameObject;
+                GameObject obj = Instantiate(prefab, new Vector3
+                    (hit.point.x, hit.point.y, hit.point.z), Quaternion.identity) as GameObject;
             }
         }
+
+        heldObj.transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y - 0.1f, transform.position.z + 0.35f);
+
+
+    }
+
+    public void EquipCube()
+    {
+        prefab = myPrefabs[0];
+
+        heldObj = Instantiate(prefab, new Vector3
+                   (transform.position.x + 0.2f, transform.position.y, transform.position.z + 0.2f), Quaternion.identity) as GameObject;
+        heldObj.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
     }
 }
