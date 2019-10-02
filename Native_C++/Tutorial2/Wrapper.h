@@ -9,13 +9,14 @@ extern "C"
 #endif
 
 	// Put your functions here
-	
-	PLUGIN_API void SavePosition(Vec3 uVec);
+
+	PLUGIN_API void SavePosition(float posX, float posY, float posZ);
 
 	PLUGIN_API void LoadPosition();
 
-	PLUGIN_API Vec3 getVec();
-	PLUGIN_API void setVec(Vec3 posVec);
+	PLUGIN_API float getX();
+	PLUGIN_API float getY();
+	PLUGIN_API float getZ();
 
 
 #ifdef __cplusplus
