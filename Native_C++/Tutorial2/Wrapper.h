@@ -10,9 +10,9 @@ extern "C"
 
 	// Put your functions here
 
-	PLUGIN_API void SavePosition(float posX, float posY, float posZ);
+	PLUGIN_API void SavePosition(float posX, float posY, float posZ, float id);
 
-	PLUGIN_API void LoadPosition();
+	PLUGIN_API std::vector<Vec3> LoadPosition();
 
 	PLUGIN_API float getX();
 	PLUGIN_API float getY();

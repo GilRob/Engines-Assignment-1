@@ -6,7 +6,7 @@
 FileManager test;
 void main()
 {
-	Vec3 vecTest;
+	/*Vec3 vecTest;
 	vecTest.x = 4.0f;
 	vecTest.y = 12.05f;
 	vecTest.z = 6.05f;
@@ -19,6 +19,6 @@ void main()
 	{
 		std::cout << test.myVecs[i].x << ' ' << test.myVecs[i].y << ' ' << test.myVecs[i].z << std::endl;
 	}
-	//test.SavePosition(vecTest);
+	//test.SavePosition(vecTest);*/
 
 }

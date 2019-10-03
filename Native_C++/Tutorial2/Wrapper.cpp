@@ -2,12 +2,12 @@
 
 FileManager fileMan;
 
-void SavePosition(float posX, float posY, float posZ)
+void SavePosition(float posX, float posY, float posZ, float id)
 {
-	return fileMan.SavePosition(posX, posY, posZ);
+	return fileMan.SavePosition(posX, posY, posZ, id);
 }
 
-void LoadPosition()
+std::vector<Vec3> LoadPosition()
 {
 	return fileMan.LoadPosition();
 }

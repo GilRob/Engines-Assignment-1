@@ -8,15 +8,11 @@ public class Instantiation : MonoBehaviour
 {
     const string DLL_NAME = "Tutorial2";
 
-    public Image cubeMetal;
-    public Image cubeSand;
-    public Image cubeBrick;
-
     //Initialize the DLL functions
     [DllImport(DLL_NAME)]
-    private static extern void SavePosition(float posX, float posY, float posZ);
+    private static extern void SavePosition(float posX, float posY, float posZ, float id);
     [DllImport(DLL_NAME)]
-    private static extern void LoadPosition();
+    private static extern List<Vector4> LoadPosition();
     [DllImport(DLL_NAME)]
     private static extern float getX();
     [DllImport(DLL_NAME)]
@@ -30,13 +26,19 @@ public class Instantiation : MonoBehaviour
     float pY = 0.0f;
     float pZ = 0.0f;
 
+    float itemID;
+
     Ray ray;
     RaycastHit hit;
     //public List<GameObject> prefabs = new List<GameObject>();
     public GameObject prefab;
     public GameObject[] myPrefabs;
 
-    private GameObject heldObj;
+    public Image cubeMetal;
+    public Image cubeSand;
+    public Image cubeBrick;
+
+    private List<Vector4> theCubes;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +56,7 @@ public class Instantiation : MonoBehaviour
             {
                 GameObject obj = Instantiate(prefab, new Vector3
                     (hit.point.x, hit.point.y, hit.point.z), Quaternion.identity) as GameObject;
-                // SavePosition(hit.point.x, hit.point.y, hit.point.z);
+                SavePosition(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z, itemID);
             }
         }
 
@@ -66,6 +68,7 @@ public class Instantiation : MonoBehaviour
             cubeSand.color = Color.white;
             cubeBrick.color = Color.white;
 
+            itemID = 0;
         }
 
         if (Input.GetKeyUp(KeyCode.Alpha2))
@@ -75,6 +78,8 @@ public class Instantiation : MonoBehaviour
             cubeSand.color = Color.red;
             cubeMetal.color = Color.white;
             cubeBrick.color = Color.white;
+
+            itemID = 1;
         }
 
         if (Input.GetKeyUp(KeyCode.Alpha3))
@@ -84,6 +89,18 @@ public class Instantiation : MonoBehaviour
             cubeBrick.color = Color.blue;
             cubeMetal.color = Color.white;
             cubeSand.color = Color.white;
+
+            itemID = 2;
+        }
+
+        if (Input.GetKeyUp(KeyCode.L))
+        {
+            theCubes = LoadPosition();
+            
+            for (int i = 0; i < theCubes.Count; i++)
+            {
+                Debug.Log(theCubes[i]);
+            }
         }
 
     }

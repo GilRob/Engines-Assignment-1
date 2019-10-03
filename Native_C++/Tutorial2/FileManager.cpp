@@ -1,17 +1,18 @@
 #include "FileManager.h"
 
 //This function will write the saved values to a text file
-void FileManager::WriteFile(std::string fileName)
+void FileManager::WriteFile(Vec3 vec)
 {
 	//Open the file
-	write.open(fileName, std::ofstream::app);
+	write.open("save.txt", std::ofstream::app);
 	//If the file is open
 	if (write.is_open())
 	{
 		//Write each value to the file
-		write << getX() << "\n";
-		write << getY() << "\n";
-		write << getZ() << "\n";
+		write << vec.x << "\n";
+		write << vec.y << "\n";
+		write << vec.z << "\n";
+		write << vec.id << "\n";
 
 		//Close the file
 		write.close();
@@ -58,11 +59,15 @@ void FileManager::ReadFile(std::string fileName)
 				setZ(posVal);
 				temp.z = posVal;
 			}
-
+			else if (posCounter == 3)
+			{
+				posVal = std::stof(line);
+				temp.id = posVal;
+			}
 			//Increment the counter to assign the values to the next variable
 			posCounter++;
 			//Check if gotten all three values
-			if (posCounter > 2)
+			if (posCounter > 3)
 			{
 				//Reset this counter
 				posCounter = 0;
@@ -78,21 +83,29 @@ void FileManager::ReadFile(std::string fileName)
 }
 
 //Saves the values to variables and calls the writer
-void FileManager::SavePosition(float posX, float posY, float posZ)
+void FileManager::SavePosition(float posX, float posY, float posZ, float id)
 {
+	Vec3 tempVec;
 	//Store the values passed into the variables
 	setX(posX);
 	setY(posY);
 	setZ(posZ);
 
+	tempVec.x = posX;
+	tempVec.y = posY;
+	tempVec.z = posZ;
+	tempVec.id = id;
+
 	//Call the file writer
-	WriteFile("save.txt");//, this);
+	WriteFile(tempVec);
 }
 
 //Calls the reader
-void FileManager::LoadPosition()
+std::vector<Vec3> FileManager::LoadPosition()
 {
 	ReadFile("save.txt");
+
+	return myVecs;
 }
 
 void FileManager::setX(float posX)
