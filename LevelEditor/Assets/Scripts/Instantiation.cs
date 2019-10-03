@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
+using UnityEngine.UI;
 
 public class Instantiation : MonoBehaviour
 {
     const string DLL_NAME = "Tutorial2";
+
+    public Image cubeMetal;
+    public Image cubeSand;
+    public Image cubeBrick;
 
     //Initialize the DLL functions
     [DllImport(DLL_NAME)]
@@ -49,21 +54,37 @@ public class Instantiation : MonoBehaviour
             {
                 GameObject obj = Instantiate(prefab, new Vector3
                     (hit.point.x, hit.point.y, hit.point.z), Quaternion.identity) as GameObject;
-                SavePosition(hit.point.x, hit.point.y, hit.point.z);
+                // SavePosition(hit.point.x, hit.point.y, hit.point.z);
             }
         }
 
-        heldObj.transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y - 0.1f, transform.position.z + 0.35f);
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            prefab = myPrefabs[0];
 
+            cubeMetal.color = Color.green;
+            cubeSand.color = Color.white;
+            cubeBrick.color = Color.white;
 
-    }
+        }
 
-    public void EquipCube()
-    {
-        prefab = myPrefabs[0];
+        if (Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            prefab = myPrefabs[1];
 
-        heldObj = Instantiate(prefab, new Vector3
-                   (transform.position.x + 0.2f, transform.position.y, transform.position.z + 0.2f), Quaternion.identity) as GameObject;
-        heldObj.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            cubeSand.color = Color.red;
+            cubeMetal.color = Color.white;
+            cubeBrick.color = Color.white;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha3))
+        {
+            prefab = myPrefabs[2];
+
+            cubeBrick.color = Color.blue;
+            cubeMetal.color = Color.white;
+            cubeSand.color = Color.white;
+        }
+
     }
 }

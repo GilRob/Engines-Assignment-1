@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour
     public float speedH = 2.0f;
     public float speedV = 2.0f;
 
+    public float moveSpeed;
+
     private float yaw = 0.0f;
     private float pitch = 0.0f;
 
@@ -19,21 +21,24 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
+
+        if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime);
+            transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.back * Time.deltaTime);
+            transform.Translate(Vector3.back * Time.deltaTime * moveSpeed);
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * Time.deltaTime);
+            transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * Time.deltaTime);
+            transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
         }
 
         yaw += speedH * Input.GetAxis("Mouse X");
