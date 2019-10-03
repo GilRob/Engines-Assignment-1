@@ -24,22 +24,30 @@ public:
 	void ReadFile(std::string fileName);
 
 	//Saves the values to variables and calls the writer
-	void SavePosition(Vec3 uVec);
+	void SavePosition(float posX, float posY, float posZ);
 
 	//Calls the reader
 	void LoadPosition();
 
 	//Setters
-	void setVec(Vec3 posVec);
+	void setX(float posX);
+	void setY(float posY);
+	void setZ(float posZ);
 
 	//Getters
-	Vec3 getVec();
+	float getX();
+	float getY();
+	float getZ();
 
 	//Variables to hold the position
-	Vec3 holdVec;
+	float X;
+	float Y;
+	float Z;
+
+	std::vector<Vec3> myVecs;
 
 private:
-	
+
 	std::ofstream write;
 	std::ifstream read;
 };
