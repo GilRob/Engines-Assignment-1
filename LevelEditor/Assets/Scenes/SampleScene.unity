@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 53970586}
   - component: {fileID: 53970585}
   m_Layer: 0
-  m_Name: poop
+  m_Name: Factory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,10 +151,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickCube: {fileID: 4145218752398587291, guid: 90ea4a2831cf5ba488abfeab5c838404,
     type: 3}
-  sandCude: {fileID: 1875356628994896904, guid: bba82ce3553b6ac4ba67e0dc218f807e,
+  sandCube: {fileID: 1875356628994896904, guid: bba82ce3553b6ac4ba67e0dc218f807e,
     type: 3}
   metalCube: {fileID: 9176784798806052855, guid: bc161fd286564fd4a84eb7f5fdd134b8,
     type: 3}
+  placedObj: {fileID: 0}
   newPos: {fileID: 1060056469}
   newCam: {fileID: 963194227}
 --- !u!4 &53970586
@@ -843,10 +844,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickCube: {fileID: 4145218752398587291, guid: 90ea4a2831cf5ba488abfeab5c838404,
     type: 3}
-  sandCude: {fileID: 1875356628994896904, guid: bba82ce3553b6ac4ba67e0dc218f807e,
-    type: 3}
+  sandCube: {fileID: 0}
   metalCube: {fileID: 9176784798806052855, guid: bc161fd286564fd4a84eb7f5fdd134b8,
     type: 3}
+  placedObj: {fileID: 0}
   newPos: {fileID: 1060056469}
   newCam: {fileID: 963194227}
 --- !u!1 &1060056464
