@@ -89,6 +89,11 @@ public class Instantiation : MonoBehaviour
             itemID = 2;
         }
 
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            SavePosition(factory.placedObj.transform.position.x, factory.placedObj.transform.position.y, factory.placedObj.transform.position.z, itemID);
+        }
+
         if (Input.GetKeyUp(KeyCode.L))
         {
             theCubes = LoadPosition();

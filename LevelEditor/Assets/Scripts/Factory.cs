@@ -9,6 +9,7 @@ public class Factory : MonoBehaviour
     public GameObject metalCube;
 
     private GameObject currObj;
+    public GameObject placedObj;
 
     public Transform newPos;
     public Camera newCam;
@@ -53,6 +54,7 @@ public class Factory : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 Instantiate(gameObject, hit.point, Quaternion.identity);
+                placedObj = gameObject;
             }
         }
     }
