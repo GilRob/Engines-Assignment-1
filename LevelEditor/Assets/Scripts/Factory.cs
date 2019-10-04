@@ -5,10 +5,9 @@ using UnityEngine;
 public class Factory : MonoBehaviour
 {
     public GameObject brickCube;
-    public GameObject sandCude;
+    public GameObject sandCube;
     public GameObject metalCube;
 
-    private bool eqip = false;
     private GameObject currObj;
 
     public Transform newPos;
@@ -23,31 +22,24 @@ public class Factory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (eqip == true)
-        {
-            spawnObj(currObj);
-        }
+        spawnObj(currObj);
 
     }
 
     public void brickSpawn()
     {
         currObj = brickCube;
-        eqip = true;
     }
 
     public void sandSpawn()
     {
-        currObj = sandCude;
-        eqip = true;
+        currObj = sandCube;
 
     }
 
     public void metalSpawn()
     {
         currObj = metalCube;
-        eqip = true;
-
     }
 
     public void spawnObj(GameObject gameObject)
@@ -61,7 +53,6 @@ public class Factory : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 Instantiate(gameObject, hit.point, Quaternion.identity);
-               // eqip = false;
             }
         }
     }
