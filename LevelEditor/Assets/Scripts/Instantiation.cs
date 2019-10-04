@@ -12,7 +12,7 @@ public class Instantiation : MonoBehaviour
     [DllImport(DLL_NAME)]
     private static extern void SavePosition(float posX, float posY, float posZ, float id);
     [DllImport(DLL_NAME)]
-    private static extern List<Vector4> LoadPosition();
+    private static extern Vector4[] LoadPosition();
     [DllImport(DLL_NAME)]
     private static extern float getX();
     [DllImport(DLL_NAME)]
@@ -38,7 +38,7 @@ public class Instantiation : MonoBehaviour
     public Image cubeSand;
     public Image cubeBrick;
 
-    private List<Vector4> theCubes;
+    private Vector4[] theCubes;
     // Start is called before the first frame update
     void Start()
     {
@@ -97,7 +97,7 @@ public class Instantiation : MonoBehaviour
         {
             theCubes = LoadPosition();
             
-            for (int i = 0; i < theCubes.Count; i++)
+            for (int i = 0; i < theCubes.Length; i++)
             {
                 Debug.Log(theCubes[i]);
             }

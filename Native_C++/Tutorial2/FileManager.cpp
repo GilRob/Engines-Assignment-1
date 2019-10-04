@@ -17,6 +17,8 @@ void FileManager::WriteFile(Vec3 vec)
 		//Close the file
 		write.close();
 	}
+
+	size++;
 }
 
 //This function will read the text file and assign the saved values to the players position
@@ -27,10 +29,12 @@ void FileManager::ReadFile(std::string fileName)
 	//Open the file
 	read.open(fileName);
 
+	myVecs = new Vec3[size];
+
 	Vec3 temp;
 
 	int posCounter = 0;
-	//int offset = 0;
+	int arrCounter = 0;
 
 	//If the file is open
 	if (read.is_open())
@@ -72,9 +76,9 @@ void FileManager::ReadFile(std::string fileName)
 				//Reset this counter
 				posCounter = 0;
 				//Add the temp to the vector
-				myVecs.push_back(temp);
-				//Increment the counter for offsetting where to start reading from
-				//offset++;
+				myVecs[arrCounter] = temp;
+				//Increment the counter for the array
+				arrCounter++;
 			}
 		}
 		//Close the file
@@ -101,7 +105,7 @@ void FileManager::SavePosition(float posX, float posY, float posZ, float id)
 }
 
 //Calls the reader
-std::vector<Vec3> FileManager::LoadPosition()
+Vec3* FileManager::LoadPosition()
 {
 	ReadFile("save.txt");
 

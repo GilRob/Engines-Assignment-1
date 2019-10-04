@@ -28,7 +28,7 @@ public:
 	void SavePosition(float posX, float posY, float posZ, float id);
 
 	//Calls the reader
-	std::vector<Vec3> LoadPosition();
+	Vec3* LoadPosition();
 
 	//Setters
 	void setX(float posX);
@@ -45,7 +45,9 @@ public:
 	float Y;
 	float Z;
 
-	std::vector<Vec3> myVecs;
+	Vec3* myVecs;
+
+	int size = 0;
 
 private:
 

@@ -7,7 +7,7 @@ void SavePosition(float posX, float posY, float posZ, float id)
 	return fileMan.SavePosition(posX, posY, posZ, id);
 }
 
-std::vector<Vec3> LoadPosition()
+Vec3* LoadPosition()
 {
 	return fileMan.LoadPosition();
 }
