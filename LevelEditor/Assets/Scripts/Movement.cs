@@ -23,8 +23,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = true;
 
         if (Input.GetKey(KeyCode.W))
         {

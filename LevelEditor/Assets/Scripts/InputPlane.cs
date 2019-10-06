@@ -54,7 +54,7 @@ public class InputPlane : MonoBehaviour
             cubePrefab = thisObj.transform;
             //prefab = myPrefabs[0];
 
-            cubeMetal.color = Color.green;
+            cubeMetal.color = Color.gray;
             cubeSand.color = Color.white;
             cubeBrick.color = Color.white;
 
@@ -68,7 +68,7 @@ public class InputPlane : MonoBehaviour
             //Factory.sandSpawn();
             //prefab = myPrefabs[1];
 
-            cubeSand.color = Color.red;
+            cubeSand.color = Color.gray;
             cubeMetal.color = Color.white;
             cubeBrick.color = Color.white;
 
@@ -83,7 +83,7 @@ public class InputPlane : MonoBehaviour
 
             //prefab = myPrefabs[2];
 
-            cubeBrick.color = Color.blue;
+            cubeBrick.color = Color.gray;
             cubeMetal.color = Color.white;
             cubeSand.color = Color.white;
 
@@ -95,7 +95,7 @@ public class InputPlane : MonoBehaviour
             Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                Factory.SpawnObj(hit.point, thisObj, cubePrefab);
+                //Factory.SpawnObj(hit.point, thisObj, cubePrefab);
                 ICommand command = new PlaceCubCommand(hit.point,thisObj, cubePrefab);
                 CommandInvoker.AddCommand(command);
 
