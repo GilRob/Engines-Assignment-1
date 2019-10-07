@@ -70,7 +70,7 @@ public class Factory:MonoBehaviour
         cubes.Add(newSpawn);
     }
 
-    public static void RemoveCube(Vector3 position, GameObject gameObject)
+    public static void RemoveCube(Vector3 position)
     {
         for(int i =0; i<cubes.Count; i++)
         {

@@ -21,6 +21,6 @@ public class PlaceCubCommand : ICommand
 
     public void Undo()
     {
-        Factory.RemoveCube(position, gameObject);
+        Factory.RemoveCube(position);
     }
 }
